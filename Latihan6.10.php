@@ -2,31 +2,25 @@
 class PolaSegitiga {
     private $ukuran;
 
-    // Setter untuk ukuran
     public function setUkuran($ukuran) {
         $this->ukuran = $ukuran;
     }
 
-    // Getter untuk ukuran
     public function getUkuran() {
         return $this->ukuran;
     }
 
-    // Segitiga pertama (piramida normal)
     public function segitigaPertama() {
-        for ($i = 1; $i <= $this->getUkuran(); $i++) {
-            // Cetak spasi untuk membuat pola segitiga
-            for ($j = $i; $j < $this->getUkuran(); $j++) {
+        for ($i = 2; $i <= $this->getUkuran(); $i++) {
+            for ($j = $i; $j <= 15; $j++) {
                 echo "&nbsp;&nbsp;";
             }
 
-            // Cetak bintang bagian kiri
-            for ($j = 1; $j <= $i; $j++) {
+            for ($j = 0; $j < $i; $j++) {
                 echo " * ";
             }
 
-            // Cetak bintang bagian kanan (tidak cetak bintang paling kiri)
-            for ($j = 1; $j < $i; $j++) {
+            for ($j = 2; $j < $i; $j++) {
                 echo " * ";
             }
 
@@ -34,21 +28,29 @@ class PolaSegitiga {
         }
     }
 
-    // Segitiga kedua (terbalik)
-    public function segitigaKedua() {
-        for ($i = $this->getUkuran(); $i >= 1; $i--) {
-            // Cetak spasi di sebelah kiri
-            for ($j = $this->getUkuran(); $j > $i; $j--) {
-                echo "&nbsp;&nbsp;";
+    public function SegitigaKedua() {
+        for ($i = 2; $i <= $this->getUkuran(); $i++) {
+            for ($j = $i; $j <= 6; $j++) {
+                echo '';
             }
 
-            // Cetak bintang
-            for ($j = 1; $j <= $i; $j++) {
+            for ($j = 1; $j < $i; $j++) {
                 echo " * ";
             }
 
-            // Cetak bagian kanan (tidak cetak bintang paling kanan)
-            for ($j = 1; $j < $i; $j++) {
+            for ($j = 7; $j < $i; $j++) {
+                echo " * ";
+            }
+
+            echo '<br/>';
+        }
+
+        for ($i = 5; $i >=1; $i--) {
+            for ($j = $i; $j >=1; $j--) {
+                echo '';
+            }
+
+            for ($j = 0; $j < $i; $j++) {
                 echo " * ";
             }
 
@@ -56,31 +58,34 @@ class PolaSegitiga {
         }
     }
 
-    // Segitiga ketiga (segitiga kiri)
-    public function segitigaKetiga() {
-        for ($i = 1; $i <= $this->getUkuran(); $i++) {
-            // Cetak bintang bagian kiri
-            for ($j = 1; $j <= $i; $j++) {
-                echo " * ";
+    public function SegitigaKetiga() {
+
+        for ($i = 2; $i <= $this->getUkuran(); $i++) {
+            for ($j = 6; $j > $i; $j--) {
+                echo "&nbsp;&nbsp;";
+            }
+            for ($k = 2; $k <= $i; $k++) {
+                echo "*";
+            }
+            
+            echo "<br />";
+        }
+         
+        for ($i = 5; $i >= 1; $i--) {
+            for ($j = 5; $j > $i; $j--) {
+                echo "&nbsp;&nbsp;";
+            }
+            for ($k = 1; $k <= $i; $k++) {
+                echo "*";
             }
 
-            echo '<br/>';
+            echo "<br />";
         }
     }
 }
-
-// Inisialisasi objek dan set ukuran
-$segitiga = new PolaSegitiga();
+$segitiga = new PolaSegitiga(); 
 $segitiga->setUkuran(6);
-
-// Cetak segitiga pertama
 $segitiga->segitigaPertama();
-echo '<br/>';
-
-// Cetak segitiga kedua
 $segitiga->segitigaKedua();
-echo '<br/>';
-
-// Cetak segitiga ketiga
 $segitiga->segitigaKetiga();
 ?>
