@@ -1,52 +1,17 @@
 <?php
-class manusia{
-    public $nama;
-    public $umur;
-    public $gender;
-    function bicara(){
-        echo "Selamat Datang";
-    }
-    function getInfo(){
-        echo "Nama=".$this->nama."<br/>";
-        echo "Umur=".$this->umur."<br/>";
-        echo "JK=".$this->gender."<br/>";
+class Shape {
+const PI = 3.142 ;
+    function __call($name,$arg){
+    if($name == 'area')
+        switch(count($arg)){
+        case 0 : return 0 ;
+        case 1 : return self::PI * $arg[0] ;
+        case 2 : return $arg[0] * $arg[1];
+        }
     }
 }
-class ayah extends manusia{
-    function pekerjaan(){ echo "Pegawai Negeri Sipil";
-    }
-}
-
-class ibu extends manusia{
-    function pekerjaan(){ echo "Ibu Rumah Tangga";
-    }
-}
-class anak extends manusia{
-    function pekerjaan() { echo "Pelajar";
-    }
-}
-
-$objekAyah = new ayah();
-$objekAyah ->nama="Budi";
-$objekAyah ->gender="Laki-Laki";
-$objekAyah ->umur="45";
-echo "<b>Info Ayah</b><br/>";
-$objekAyah ->getinfo();
-$objekAyah ->pekerjaan();
-
-$objekibu = new ibu();
-$objekibu ->nama="Dini";
-$objekibu ->gender="Perempuan";
-$objekibu ->umur="38";
-echo "<b>Info Ibu</b><br/>";
-$objekibu ->getInfo();
-$objekibu ->pekerjaan();
-
-$objekAnak = new anak();
-$objekAnak ->nama="Ardi";
-$objekAnak ->gender="Laki-Laki";
-$objekAnak ->umur="15";
-echo "<b>Info Anak</b><br/>";
-$objekAnak ->getInfo();
-$objekAnak ->pekerjaan();
+$circle = new Shape();
+echo $circle->area(3);
+$rect = new Shape();
+echo $rect->area(8,6);
 ?>
