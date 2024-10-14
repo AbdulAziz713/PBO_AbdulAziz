@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PROGRAM KASIR TOKO - BUTIK CANTIK</title>
+  </head>
+  <body>
+    <!-- Header -->
+    <div class="Logo" style="color: green; background: #ffff; display: flex">
+      <img src="img/polsub.png" alt="Logo" style="width: 150px" />
+      <div class="header">
+        <h1>KASIR TOKO</h1>
+        <h2>Butik Cantik</h2>
+      </div>
+    </div>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <hr align="left" size="3px" color="grey"/>
+      <ul type:"I">
+        <li style="color: green;">Login</li>
+      </ul>
+    </div>
+
+    <!-- Content -->
+    <div class="content" style="
+    margin: 0;
+    float: right;
+    width: 70%;
+    padding: 10px 20px;
+    font-size: 1.5em;
+    text-align: left;
+    border-left: 3px solid grey; height: 100%;
+    ">
+    <form action="proses.php" method="get">
+        <table border="3">
+          <tr>
+            <td rowspan="1"><img src="img/windows.png" style="height: 100px"> Login Kasir</td>
+          </tr>
+          <tr>
+            <td>Username :<input type="text" name="Nama Lengkap" /></td>
+          </tr>
+          <tr>
+            <td>Password :<input type="Password" name="Password" /></td>
+          </tr>
+          <tr>
+            <td>
+              Level :
+              <select name="kota">
+                <option value="User">User</option>
+                <option value="Admin" selected="selected">Admin</option>
+                <option value="Superadmin">Superadmin</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td><input type="submit" name="simpan" value="Login" /></td>
+          </tr>
+        </table>
+      </form>
+    </div>
+</div>
+  </body>
+</html>
