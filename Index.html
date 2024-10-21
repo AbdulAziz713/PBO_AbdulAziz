@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Beranda</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <a href="Index.html" class="navbar-logo">Buku <span>Tamu</span></a>
+      <div class="navbar-nav">
+        <a href="Index.html">Beranda</a>
+        <a href="About.html">Tentang Kami</a>
+      </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero" id="home">
+      <main class="content">
+        <h1 style="color: blue; font-size: 24px; line-height: 1.2">
+          Selamat Datang di <span>Halaman Beranda</span>
+        </h1>
+      </main>
+    </section>
+
+    <!-- Tabel Buku Tamu -->
+    <table id="guestBookTable" border="1">
+      <thead>
+        <tr>
+          <th>Nama</th>
+          <th>Email</th>
+          <th>Pesan</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <!-- Tombol Buka Buku Tamu -->
+    <button id="openGuestBookBtn">Buka Buku Tamu</button>
+
+    <!-- Javascript -->
+    <script>
+      // Menambahkan event listener pada tombol
+      document
+        .getElementById("openGuestBookBtn")
+        .addEventListener("click", openGuestBook);
+
+      function openGuestBook() {
+        const name = prompt("Masukkan nama Anda:");
+        const email = prompt("Masukkan email Anda:");
+        const message = prompt("Masukkan pesan Anda:");
+
+        console.log(`Nama: ${name}, Email: ${email}, Pesan: ${message}`);
+
+        // Menambahkan data ke dalam tabel
+        const table = document
+          .getElementById("guestBookTable")
+          .getElementsByTagName("tbody")[0];
+        const newRow = table.insertRow();
+        newRow.insertCell(0).textContent = name;
+        newRow.insertCell(1).textContent = email;
+        newRow.insertCell(2).textContent = message;
+      }
+    </script>
+  </body>
+</html>

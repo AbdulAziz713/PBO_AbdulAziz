@@ -1,0 +1,170 @@
+:root {
+  --primary: #4cc9fe;
+  --bg: #37afe1;
+  --txt: #f5f4b3;
+}
+
+/* Body */
+body {
+  background-color: var(--bg);
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  padding-top: 150px;
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.hero .content {
+  width: 100%;
+  text-align: center;
+  position: fixed;
+  top: 150px;
+}
+
+/* Text */
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Judul */
+.title {
+  color: var(--primary);
+  font-size: 2.5em;
+}
+
+/* Link */
+a {
+  display: inline-block;
+  margin: 20px;
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: #ffff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+/* Hover Link */
+a:hover {
+  background-color: #0056b3;
+}
+
+/* Tombol */
+button {
+  display: inline-block;
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: #ffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 20px;
+}
+
+/* Hover Tombol */
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Tabel */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 100px;
+}
+
+th,
+td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+th {
+  background-color: #007bff;
+  color: #ffff;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tbody tr:hover {
+  background-color: #ddd;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 7%;
+  background-color: var(--primary);
+  border-bottom: 1px solid var(--primary);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+.navbar .navbar-logo {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffff;
+  font-style: italic;
+}
+
+.navbar .navbar-logo span {
+  color: var(--primary);
+}
+
+.navbar .navbar-nav {
+  display: flex;
+}
+
+.navbar .navbar-nav a {
+  color: #ffff;
+  display: inline-block;
+  font-size: 1.3rem;
+  margin: 0 1rem;
+}
+
+.navbar .navbar-nav a:hover {
+  color: var(--primary);
+}
+
+.navbar .navbar-nav a::after {
+  content: " ";
+  display: block;
+  padding-bottom: 0.5rem;
+  border-bottom: 0.1rem solid var(--primary);
+  transform: scaleX(0);
+  transition: 0.2s linear;
+}
+
+.navbar .navbar-nav a:hover::after {
+  transform: scaleX(1);
+}
+
+.about-title {
+  text-align: center;
+  color: var(--txt);
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
+p {
+  padding: 10px;
+  text-align: center;
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
